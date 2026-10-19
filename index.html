@@ -475,6 +475,20 @@ body { word-break: keep-all }
   .hist-ch .ch b { font-size: 12.5px }
   .hist-ch .ch span, .hist-ch .ch.big span { font-size: 10.5px; margin-top: 2px }
 }
+
+/* 2026-10-19 첫 화면 썸네일: 아래로 디졸브되며 다음 장(연락처)까지 이어짐 (PC) */
+@media (min-width: 1000px) {
+  .cover { overflow: visible; z-index: 0 }
+  .cover .wall { bottom: -560px;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 48%, rgba(0,0,0,.35) 72%, transparent 94%);
+            mask-image: linear-gradient(180deg, #000 0%, #000 48%, rgba(0,0,0,.35) 72%, transparent 94%) }
+  .cover .veil { bottom: -560px }
+  .contact { position: relative; z-index: 1; background: transparent }
+}
+/* 연락처 장: 작업 퀄리티 제목 삭제, 사용 프로그램을 박스 위로 / 첫 화면 썸네일 가로 넘침 잘라내기 */
+.c-qual .tools { margin: 0 0 22px }
+@media (min-width: 1000px) { .cover { overflow-x: clip; overflow-y: visible } }
+@media (max-width: 999px) { .c-qual .tools { margin: 0 0 10px } }
 </style></head><body>
 <section class="s cover">
   <div class="wall"><img src="thumbs/XeYs2Q5QY1I.jpg"><img src="thumbs/g6scBEerAt4.jpg"><img src="thumbs/v1Unn10xBuc.jpg"><img src="thumbs/Avky1tLEnME.jpg"><img src="thumbs/A71HoQ8goys.jpg"><img src="thumbs/oNIMkrfNJYg.jpg"><img src="thumbs/I3ryk8oZK3I.jpg"><img src="thumbs/ywEwQuLFLpw.jpg"><img src="thumbs/ki_2CPPkf7w.jpg"><img src="thumbs/8CUuXYIKLVI.jpg"><img src="thumbs/SRNsp7Xr_KU.jpg"><img src="thumbs/OcdRrWFGkoY.jpg"><img src="thumbs/jonZZkrdyzI.jpg"><img src="thumbs/jtU_Lo8Ace0.jpg"><img src="thumbs/5Z9gCCPXCoI.jpg"><img src="thumbs/X09QRk544yo.jpg"><img src="thumbs/RDFswyhIzWc.jpg"><img src="thumbs/Hn5inqDPSt4.jpg"></div>
@@ -494,7 +508,7 @@ body { word-break: keep-all }
       <div><i>전화</i><b><a href="tel:01046799225">010-4679-9225</a></b></div>
     </div>
   </div>
-  <div class="c-qual"><h3>작업 <em>퀄리티</em></h3><div class="str"><div><i>♪</i><b>유료 BGM</b><span>Artlist 라이선스 음원 사용</span></div><div><i>Aa</i><b>유료 폰트</b><span>디자인210 · 산돌구름</span></div><div><i>✦</i><b>모션그래픽 · 효과음</b><span>유료 소스 사용</span></div><div><i>✓</i><b>맞춤법</b><span>민감한 편 — 오타 외엔 거의 틀리지 않습니다</span></div><div><i>↻</i><b>피드백</b><span>불쾌하게 받아들이지 않습니다</span></div><div><i>©</i><b>저작권</b><span>이해도가 높습니다</span></div></div><div class="tools"><b>사용 프로그램</b><span>프리미어 프로</span><span>애프터 이펙트</span><span>포토샵</span><span>노션</span><span>오피스</span></div></div>
+  <div class="c-qual"><div class="tools"><b>사용 프로그램</b><span>프리미어 프로</span><span>애프터 이펙트</span><span>포토샵</span><span>노션</span><span>오피스</span></div><div class="str"><div><i>♪</i><b>유료 BGM</b><span>Artlist 라이선스 음원 사용</span></div><div><i>Aa</i><b>유료 폰트</b><span>디자인210 · 산돌구름</span></div><div><i>✦</i><b>모션그래픽 · 효과음</b><span>유료 소스 사용</span></div><div><i>✓</i><b>맞춤법</b><span>민감한 편 — 오타 외엔 거의 틀리지 않습니다</span></div><div><i>↻</i><b>피드백</b><span>불쾌하게 받아들이지 않습니다</span></div><div><i>©</i><b>저작권</b><span>이해도가 높습니다</span></div></div></div>
 </section>
 
 <section class="s">
