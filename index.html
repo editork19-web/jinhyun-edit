@@ -622,6 +622,11 @@ a.ch.go:hover, a.ch.go:focus-visible { background: #24221c; box-shadow: inset 0 
   .etc-shorts { grid-column: 1 / -1 }
 }
 @media (max-width: 999px) { .etc-shorts { overflow: visible; margin: 0; padding: 0 } .etc-shorts > .tall { flex: 1 1 0 } }
+
+/* 2026-10-20 채널 메인 영상: 누르면 페이지 안에서 재생 */
+.chb .frame.playing { background: #000 }
+.chb .frame.playing iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0 }
+.chb .card.main .frame { position: relative; cursor: pointer }
 </style></head><body>
 <section class="s cover">
   <div class="wall"><img src="thumbs/XeYs2Q5QY1I.jpg"><img src="thumbs/g6scBEerAt4.jpg"><img src="thumbs/v1Unn10xBuc.jpg"><img src="thumbs/Avky1tLEnME.jpg"><img src="thumbs/A71HoQ8goys.jpg"><img src="thumbs/oNIMkrfNJYg.jpg"><img src="thumbs/I3ryk8oZK3I.jpg"><img src="thumbs/ywEwQuLFLpw.jpg"><img src="thumbs/ki_2CPPkf7w.jpg"><img src="thumbs/8CUuXYIKLVI.jpg"><img src="thumbs/SRNsp7Xr_KU.jpg"><img src="thumbs/OcdRrWFGkoY.jpg"><img src="thumbs/jonZZkrdyzI.jpg"><img src="thumbs/jtU_Lo8Ace0.jpg"><img src="thumbs/5Z9gCCPXCoI.jpg"><img src="thumbs/X09QRk544yo.jpg"><img src="thumbs/RDFswyhIzWc.jpg"><img src="thumbs/Hn5inqDPSt4.jpg"></div>
@@ -755,7 +760,7 @@ a.ch.go:hover, a.ch.go:focus-visible { background: #24221c; box-shadow: inset 0 
 <script>
 const fit=()=>{const w=document.documentElement.clientWidth;const z=w>=1000?w/1920:1;document.querySelectorAll('section.s').forEach(s=>s.style.zoom=z)};
 addEventListener('resize',fit);fit();
-function goCh(h,smooth){const t=document.querySelector(h);if(!t)return;scrollTo({top:t.getBoundingClientRect().top+scrollY-24,behavior:smooth?'smooth':'auto'})}document.querySelectorAll('a.ch.go').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const h=a.getAttribute('href');goCh(h,true);history.replaceState(null,'',h)}));if(location.hash.startsWith('#ch-'))addEventListener('load',()=>goCh(location.hash,false));
+document.querySelectorAll('.chb .card.main').forEach(c=>c.addEventListener('click',e=>{if(e.ctrlKey||e.metaKey||e.shiftKey)return;const u=new URL(c.href);const id=u.searchParams.get('v');if(!id)return;e.preventDefault();const f=c.querySelector('.frame');if(f.querySelector('iframe'))return;const lst=u.searchParams.get('list');const q='autoplay=1&playsinline=1&rel=0'+(lst?'&list='+lst:'');f.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?'+q+'" title="'+(c.querySelector('img')||{}).alt+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';f.classList.add('playing')}));function goCh(h,smooth){const t=document.querySelector(h);if(!t)return;scrollTo({top:t.getBoundingClientRect().top+scrollY-24,behavior:smooth?'smooth':'auto'})}document.querySelectorAll('a.ch.go').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const h=a.getAttribute('href');goCh(h,true);history.replaceState(null,'',h)}));if(location.hash.startsWith('#ch-'))addEventListener('load',()=>goCh(location.hash,false));
 document.querySelectorAll('.copy').forEach(el=>el.addEventListener('click',()=>{navigator.clipboard&&navigator.clipboard.writeText(el.dataset.copy).then(()=>{const t=document.querySelector('.toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1600)})}));
 </script>
 </body></html>
