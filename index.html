@@ -627,6 +627,24 @@ a.ch.go:hover, a.ch.go:focus-visible { background: #24221c; box-shadow: inset 0 
 .chb .frame.playing { background: #000 }
 .chb .frame.playing iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0 }
 .chb .card.main .frame { position: relative; cursor: pointer }
+
+/* 2026-10-20 기타 칸: 정파카(메인 16:9) + 도담자이 숏폼 2개(세로, 썸네일 옆 제목) */
+.etc-side { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px }
+.etc-side .card.short { display: grid; grid-template-columns: 104px 1fr; gap: 14px; align-items: end; text-decoration: none }
+.etc-side .card.short .frame { height: auto; aspect-ratio: 9/16; border-radius: 10px }
+.etc-side .card.short .frame img { object-fit: cover }
+.etc-side .card.short .cap { margin: 0 0 4px }
+.etc-side .card.short .cap b { font-size: 17px; line-height: 1.3 }
+.etc-side .card.short .cap span { font-size: 13px; min-height: 0 }
+.etc-side .play { width: 30px; height: 30px; font-size: 11px; right: 6px; bottom: 6px }
+.chb-etc .main .cap span:empty { display: none }
+@media (max-width: 999px) {
+  .etc-side { gap: 10px; margin-top: 12px }
+  .etc-side .card.short { grid-template-columns: 64px 1fr; gap: 8px }
+  .etc-side .card.short .cap b { font-size: 12px }
+  .etc-side .card.short .cap span { font-size: 10px }
+  .etc-side .play { width: 20px; height: 20px; font-size: 7px; right: 3px; bottom: 3px }
+}
 </style></head><body>
 <section class="s cover">
   <div class="wall"><img src="thumbs/XeYs2Q5QY1I.jpg"><img src="thumbs/g6scBEerAt4.jpg"><img src="thumbs/v1Unn10xBuc.jpg"><img src="thumbs/Avky1tLEnME.jpg"><img src="thumbs/A71HoQ8goys.jpg"><img src="thumbs/oNIMkrfNJYg.jpg"><img src="thumbs/I3ryk8oZK3I.jpg"><img src="thumbs/ywEwQuLFLpw.jpg"><img src="thumbs/ki_2CPPkf7w.jpg"><img src="thumbs/8CUuXYIKLVI.jpg"><img src="thumbs/SRNsp7Xr_KU.jpg"><img src="thumbs/OcdRrWFGkoY.jpg"><img src="thumbs/jonZZkrdyzI.jpg"><img src="thumbs/jtU_Lo8Ace0.jpg"><img src="thumbs/5Z9gCCPXCoI.jpg"><img src="thumbs/X09QRk544yo.jpg"><img src="thumbs/RDFswyhIzWc.jpg"><img src="thumbs/Hn5inqDPSt4.jpg"></div>
@@ -684,10 +702,6 @@ a.ch.go:hover, a.ch.go:focus-visible { background: #24221c; box-shadow: inset 0 
   <h2>기타 <em>대표작</em></h2>
   <div class="etc">
     <a class="card wide" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=bVgmIJPhk6M"><div class="frame"><img src="thumbs/bVgmIJPhk6M.jpg" alt="AI 박람회 광고영상"><span class="play">▶</span></div><div class="cap"><b>AI 박람회 광고영상</b><span><em>AI 광고영상</em> 제작</span></div></a>
-    <div class="etc-shorts">
-      <a class="card tall" target="_blank" rel="noopener" href="https://www.youtube.com/shorts/sQKRMBLtof0"><div class="frame"><img src="thumbs/sQKRMBLtof0.jpg" alt="부동산 도담자이 홍보영상 1화"><span class="play">▶</span></div><div class="cap"><b>도담자이 홍보영상 1화</b><span>부동산 홍보 · 숏폼</span></div></a>
-      <a class="card tall" target="_blank" rel="noopener" href="https://www.youtube.com/shorts/6G3HZKcYkWc"><div class="frame"><img src="thumbs/6G3HZKcYkWc.jpg" alt="부동산 도담자이 홍보영상 2화"><span class="play">▶</span></div><div class="cap"><b>도담자이 홍보영상 2화</b><span>부동산 홍보 · 숏폼</span></div></a>
-    </div>
   </div>
 </section>
 <section class="s chs2">
@@ -752,8 +766,11 @@ a.ch.go:hover, a.ch.go:focus-visible { background: #24221c; box-shadow: inset 0 
 </section>
 <section class="s chs2">
   <div class="chb" id="ch-kasha"><h2><em>참새왕</em></h2><p class="chs-sub">게임 · 영상제작</p>
-    <div class="chv"><a class="card main" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=LplkYz8e4Q4"><div class="frame"><img src="thumbs/LplkYz8e4Q4.jpg" alt="아무도 예측 못하는 퀸 공중제비 활용법 [💥카샤, 퀸 매드무비💥]" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>아무도 예측 못하는 퀸 공중제비 활용법 [💥카샤, 퀸 매드무비💥]</b><span></span></div></a><div class="chv-side"><a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=fKO32KfoYt8"><div class="frame"><img src="thumbs/fKO32KfoYt8.jpg" alt="퀸은 너프당했지만, 난 아직 포기하지 않았다. [퀸 매드무비, Quinn Montage, 카샤]" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>퀸은 너프당했지만, 난 아직 포기하지 않았다. [퀸 매드무비, Quinn Montage, 카샤]</b><span></span></div></a><a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mAlkbTbDJ6c"><div class="frame"><img src="thumbs/mAlkbTbDJ6c.jpg" alt="핑크와드를 사야하는 이유!! 왜 핑와를 2개씩 들고 다니는 걸까?? [💥카샤, 퀸 매드무비💥]" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>핑크와드를 사야하는 이유!! 왜 핑와를 2개씩 들고 다니는 걸까?? [💥카샤, 퀸 매드무비💥]</b><span></span></div></a><a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=odaawZ5DHso"><div class="frame"><img src="thumbs/odaawZ5DHso.jpg" alt="카샤 하이라이트, 제발 끝내지 말아줘...! (다급)  [매드무비 10.1 ver]" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>카샤 하이라이트, 제발 끝내지 말아줘...! (다급)  [매드무비 10.1 ver]</b><span></span></div></a></div></div></div><div class="chb chb-etc" id="ch-etc"><h2><em>기타</em></h2><p class="chs-sub">정파카 · 물리치료 · 영상제작</p>
-    <div class="chv"><a class="card main" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=r1_6mDMncOg"><div class="frame"><img src="thumbs/r1_6mDMncOg.jpg" alt="삶의 질이 수직 상승! 지겨운 두통 해결하기" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>삶의 질이 수직 상승! 지겨운 두통 해결하기</b><span></span></div></a></div></div>
+    <div class="chv"><a class="card main" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=LplkYz8e4Q4"><div class="frame"><img src="thumbs/LplkYz8e4Q4.jpg" alt="아무도 예측 못하는 퀸 공중제비 활용법 [💥카샤, 퀸 매드무비💥]" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>아무도 예측 못하는 퀸 공중제비 활용법 [💥카샤, 퀸 매드무비💥]</b><span></span></div></a><div class="chv-side"><a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=fKO32KfoYt8"><div class="frame"><img src="thumbs/fKO32KfoYt8.jpg" alt="퀸은 너프당했지만, 난 아직 포기하지 않았다. [퀸 매드무비, Quinn Montage, 카샤]" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>퀸은 너프당했지만, 난 아직 포기하지 않았다. [퀸 매드무비, Quinn Montage, 카샤]</b><span></span></div></a><a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mAlkbTbDJ6c"><div class="frame"><img src="thumbs/mAlkbTbDJ6c.jpg" alt="핑크와드를 사야하는 이유!! 왜 핑와를 2개씩 들고 다니는 걸까?? [💥카샤, 퀸 매드무비💥]" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>핑크와드를 사야하는 이유!! 왜 핑와를 2개씩 들고 다니는 걸까?? [💥카샤, 퀸 매드무비💥]</b><span></span></div></a><a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=odaawZ5DHso"><div class="frame"><img src="thumbs/odaawZ5DHso.jpg" alt="카샤 하이라이트, 제발 끝내지 말아줘...! (다급)  [매드무비 10.1 ver]" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>카샤 하이라이트, 제발 끝내지 말아줘...! (다급)  [매드무비 10.1 ver]</b><span></span></div></a></div></div></div><div class="chb chb-etc" id="ch-etc"><h2><em>기타</em></h2><p class="chs-sub">정파카 · 물리치료 / 도담자이 · 부동산 홍보 숏폼</p>
+    <div class="chv"><a class="card main" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=r1_6mDMncOg"><div class="frame"><img src="thumbs/r1_6mDMncOg.jpg" alt="삶의 질이 수직 상승! 지겨운 두통 해결하기" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>삶의 질이 수직 상승! 지겨운 두통 해결하기</b><span></span></div></a><div class="etc-side">
+      <a class="card short" target="_blank" rel="noopener" href="https://www.youtube.com/shorts/sQKRMBLtof0"><div class="frame"><img src="thumbs/sQKRMBLtof0.jpg" alt="부동산 도담자이 홍보영상 1화" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>도담자이 홍보영상 1화</b><span>부동산 홍보 · 숏폼</span></div></a>
+      <a class="card short" target="_blank" rel="noopener" href="https://www.youtube.com/shorts/6G3HZKcYkWc"><div class="frame"><img src="thumbs/6G3HZKcYkWc.jpg" alt="부동산 도담자이 홍보영상 2화" loading="lazy"><span class="play">▶</span></div><div class="cap"><b>도담자이 홍보영상 2화</b><span>부동산 홍보 · 숏폼</span></div></a>
+    </div></div></div>
 </section>
 
 <div class="toast">카톡 ID를 복사했어요</div>
